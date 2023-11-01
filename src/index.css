@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Start general rules */
+:root{
+    --bg-color:#222222;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    @apply dark:text-white text-[#222222]
+}
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+   text-decoration: none;
+}
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+/* End general rules */
+.main-layout{
+    width: 100%;
+    min-height: 100vb;
+}
+
+.title::before{
+    content: '';
+    position: absolute ;
+    bottom: -2px;
+    background-color: #007bff;
+    width: 30%;
+    height: 2px;
+}
+.title{
+    @apply w-fit font-semibold text-[22px] capitalize py-2 border-b-2 mb-10 border-[#6c757d] relative text-[#222222] dark:text-[white]
+}
