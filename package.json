@@ -15,7 +15,8 @@
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.2",
     "react-icons": "^4.11.0",
-    "react-router-dom": "^6.17.0"
+    "react-router-dom": "^6.17.0",
+    "swiper": "^10.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
