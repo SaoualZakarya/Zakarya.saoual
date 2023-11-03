@@ -1,7 +1,9 @@
-
+import { PageTitlte } from "../component/PageTitlte"
 
 export const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <>
+      <PageTitlte desc={'My work'} title={'Portfolio'}  />
+    </>
   )
 }

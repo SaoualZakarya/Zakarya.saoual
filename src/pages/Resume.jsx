@@ -42,8 +42,8 @@ export const Resume = () => {
               key={i} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.5}}
               className="relative bg-[#fdfdfd] dark:bg-[#252525]  my-16 h-fit rounded-tr-2xl border-l-2 border-b-2 border-solid border-[#f5f6f9] dark:border-[#333333] p-4"
               >
-                <div className="flex items-center gap-5">
-                  <div className="w-[150px] text-[14px] px-2 py-1 border-2 text-center border-solid rounded-2xl border-[#007ced]">
+                <div className="-ml-[80px] -mt-8 flex items-center gap-3">
+                  <div className="w-[150px] font-semibold text-[14px] py-1 border-2 text-center border-solid rounded-2xl border-[#007ced]">
                     {ele.year}
                   </div>
                   <div className="text-[16px] font-semibold  text-[#666666] dark:text-[#AAAAAA]">
@@ -114,19 +114,39 @@ export const Resume = () => {
                 </div>
                 <div className="swiper-slide">
                   <a href="https://www.coursera.org/account/accomplishments/verify/5DDL4TVDP52S">
-                    <img src={'/certificate/python2.png'} className="w-[400px] rounded-xl h-[240px] " alt="python"/>
+                    <img 
+                      loading="lazy"
+                      src={'/certificate/python2.png'} 
+                      className="w-[400px] rounded-xl h-[240px] " 
+                      alt="python"
+                    />
                   </a>
                 </div>
                 <div className="swiper-slide">
                   <a href="https://www.coursera.org/account/accomplishments/verify/5M2V67K8Z5LR">
-                    <img src={'/certificate/python.jpeg'} className="w-[400px] rounded-xl h-[240px] " alt="python"/>
+                    <img 
+                      loading="lazy"
+                      src={'/certificate/python.jpeg'}
+                      className="w-[400px] rounded-xl h-[240px] " 
+                      alt="python"
+                    />
                   </a>
                 </div>
                 <div className="swiper-slide">
-                  <img src={'/certificate/bytecraft.png'} className="w-[400px] rounded-xl h-[240px] " alt="Bytecraft"/>
+                  <img  
+                    loading="lazy"
+                    src={'/certificate/bytecraft.png'} 
+                    className="w-[400px] rounded-xl h-[240px] " 
+                    alt="Bytecraft"
+                  />
                 </div>
                 <div className="swiper-slide">
-                  <img src={'/certificate/brainOn.png'} className="w-[400px] rounded-xl h-[240px] " alt="BrainOn"/>
+                  <img 
+                    loading="lazy"
+                    src={'/certificate/brainOn.png'} 
+                    className="w-[400px] rounded-xl h-[240px] "
+                    alt="BrainOn"
+                  />
                 </div>
               </div>
               <div  className="swiper-pagination"></div>

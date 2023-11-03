@@ -3,7 +3,39 @@ import {FaLocationDot} from 'react-icons/fa6'
 import {BiPhoneCall} from 'react-icons/bi'
 import {AiOutlineMail} from 'react-icons/ai'
 import { Title } from "../component/Title"
+import {CustomInput} from '../component/CustomInput'
+import * as Yup from 'yup'; 
+import {useFormik} from 'formik'
+import { useNavigate } from "react-router-dom"
+
+let contactSchema = Yup.object({
+  name: Yup.string().min(10,"Full name at least 10 char").required('Full name is required'),
+  email: Yup.string().required('Email is required'),
+  subject: Yup.string().min(10,"subject at least 10 char").required('subject is required'),
+  desc: Yup.string().min(25,"description at least 25 char").required('description is required'),
+});
+
 export const Contact = () => {
+
+  const navigate = useNavigate()
+
+  const formik = useFormik({
+    initialValues:  {
+      name:'',
+      email:'',
+      desc:'',
+      subject:''
+    },
+    validationSchema: contactSchema,
+    onSubmit: (values,{resetForm}) => {
+      alert(JSON.stringify(values, null, 2))
+      resetForm();
+      setTimeout(() => {
+        navigate('/');
+      },2000);
+    },
+  })
+
   return (
     <section>
       <PageTitlte title={'Contact'} desc={'Get in touch'} />
@@ -19,7 +51,7 @@ export const Contact = () => {
         </iframe>
         <div className="flex lg:justify-between justify-center flex-wrap ">
           <div className="">
-            <div className="flex bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-8 w-[350px] items-center">
+            <div className="flex hover:shadow-2xl hover:scale-[1.1] bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-8 w-[350px] items-center">
               <BiPhoneCall className="w-16 h-16 text-[#007ced]"/>
               <div>
                 <h1 className="font-bold text-[19px]">+213668581327</h1>
@@ -28,7 +60,7 @@ export const Contact = () => {
                 </p>
               </div>
             </div>
-            <div className="flex  bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl py-8 gap-8 w-[350px] items-center">
+            <div className="flex hover:shadow-2xl hover:scale-[1.1]  bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl py-8 gap-8 w-[350px] items-center">
               <FaLocationDot className="w-10 h-10 text-[#007ced]"/>
               <div>
                 <h1 className="font-bold text-[19px]">Algeria</h1>
@@ -37,7 +69,7 @@ export const Contact = () => {
                 </p>
               </div>
             </div>
-            <div className="flex bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-8 w-[350px] items-center">
+            <div className="flex hover:shadow-2xl hover:scale-[1.1] bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-8 w-[350px] items-center">
               <AiOutlineMail className="w-16 h-12 text-[#007ced]"/>
               <div>
               <a href="mailto:zakaryasaoual@gmail.com" className="font-bold text-[19px]">zakaryasaoual@gmail.com</a>
@@ -50,6 +82,65 @@ export const Contact = () => {
           </div>
           <div>
             <Title ele={'How can I help You  ?'} />
+            <form 
+              onSubmit={formik.handleSubmit}
+            >
+              <div className="flex flex-col gap-5 w-[380px] md:w-[420px]">
+                <CustomInput 
+                  name='Name' 
+                  type='text'
+                  placeHolder={'Enter your Full Name'}
+                  onChange={(e) => formik.handleChange('name')(e)} 
+                  value={formik.values.name}
+                />
+                <div className='error'>
+                  {formik.touched.name && formik.errors.name ? (
+                    <div> { formik.errors.name } </div>
+                    ) : null }
+                </div>
+                <CustomInput 
+                  name='Email' 
+                  type='email'  
+                  placeHolder={'Enter your Email'} 
+                  onChange={(e) => formik.handleChange('email')(e)} 
+                  value={formik.values.email}
+                />
+                <div className='error'>
+                  {formik.touched.email && formik.errors.email ? (
+                    <div> { formik.errors.email } </div>
+                    ) : null }
+                </div>
+                <CustomInput 
+                  name='subject' 
+                  type='text' 
+                  placeHolder={'Subject '} 
+                  onChange={(e) => formik.handleChange('subject')(e)} 
+                  value={formik.values.subject}
+                />
+                <div className='error'>
+                  {formik.touched.subject && formik.errors.subject ? (
+                    <div> { formik.errors.subject } </div>
+                    ) : null }
+                </div>
+                <textarea
+                  className=" text-inherit h-[160px] font-semibold w-full p-3 rounded-xl border-2 dark:bg-[#222] bg-white outline-none border-[#bfbfbf] dark:border-[#555] border-solid"
+                  placeholder="Enter Your Message Here..."
+                  onChange={(e) => formik.handleChange('desc')(e)} 
+                  value={formik.values.desc}
+                > </textarea>
+                <div className='error'>
+                  {formik.touched.desc && formik.errors.desc ? (
+                    <div> { formik.errors.desc } </div>
+                    ) : null }
+                </div>
+                <button 
+                  type="submit" 
+                  className="px-6 font-bold w-fit py-3 rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#007bff] hover:text-white border-[#007bff]" 
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
           
         </div>

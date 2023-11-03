@@ -50,3 +50,6 @@ a {
 .title{
     @apply w-fit font-semibold text-[22px] capitalize py-2 border-b-2 mb-10 border-[#6c757d] relative text-[#222222] dark:text-[white]
 }
+.error{
+    @apply text-[12px] text-red-600
+}
