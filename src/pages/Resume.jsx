@@ -28,10 +28,12 @@ export const Resume = () => {
     };
   }, []);
 
+  const getCurrentYear = new Date().getFullYear()
+
   return (
     <>
       <section >
-        <PageTitlte title={'Resume'} />
+        <PageTitlte title={'Resume'} desc={`${getCurrentYear - 2022} Years of Experience`} />
         <div className="container flex flex-wrap py-14 md:justify-between justify-center">
           <div className="w-[450px]">
             <Title ele={'Education && Exprience'} />
