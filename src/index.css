@@ -63,7 +63,7 @@ a {
     left:0;
     z-index:20;
     transition:.5s ;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .project:hover::before{
@@ -71,8 +71,7 @@ a {
     z-index:20;
     height:100%;
     background-color:black;
-    filter : blur(3px);
-    opacity:.8
+    opacity:.8;
 }
 
 .project-text{
@@ -87,7 +86,7 @@ a {
     flex-direction:column;
     align-items:center;
     gap:12px;
-    transition:1s
+    transition:1s;
 }   
 
 .project:hover .project-text{

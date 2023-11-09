@@ -129,12 +129,20 @@ export const projects = [
         demoLink:'https://movies-app-six-rouge.vercel.app'
     },
     {
-        title: 'Ecommerce shop',
+        title: 'Ecommerce shop dashboard',
         img:'',
-        description: 'This is full stack web project that allow to manage whole ecommerce shop from admin panel to manage shop the website until users ',
+        description: 'This is full stack web project that allow to manage whole ecommerce shop .This is the admin Dashboard page',
         techUsedLogo: ['/tools/react.png','/tools/express.png','/tools/mongodb.png'],
-        githubLinkDashboard:'https://github.com/zakaryaalgeria/Ecommerce-shop-admin-panel',
         githubLinkFront: 'https://github.com/zakaryaalgeria/Ecommerce-shop-admin-panel',
+        githubLinkBack: 'https://github.com/zakaryaalgeria/Ecommerce-shop-backend' ,
+        demoLink:''
+    },
+    {
+        title: 'Ecommerce shop user side',
+        img:'',
+        description: 'This is full stack web project that allow to manage whole ecommerce shop .This is the user side . ',
+        techUsedLogo: ['/tools/react.png','/tools/express.png','/tools/mongodb.png'],
+        githubLinkFront: 'https://github.com/zakaryaalgeria/Ecommerce-shop-client-side',
         githubLinkBack: 'https://github.com/zakaryaalgeria/Ecommerce-shop-backend' ,
         demoLink:''
     },
