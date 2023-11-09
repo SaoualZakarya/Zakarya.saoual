@@ -23,15 +23,19 @@ export const Contact = () => {
 
   const form = useRef();
 
+  console.log(import.meta.env.VITE_SERVICE_KEY)
+  console.log(import.meta.env.VITE_TEMPLATE_ID)
+  console.log(import.meta.env.VITE_PUBLIC_KEY)
+
   const sendEmail = () => {
 
-  emailjs.sendForm('service_yuqv0c4', 'template_0dnxflc', form.current, 'zxb-F2kUunlq8VNuU')
+  emailjs.sendForm(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_KEY)
     .then((result) => {
       console.log(result.text);
     }, (error) => {
       console.log(error.text);
     });
-};
+  };
 
   const navigate = useNavigate()
 
