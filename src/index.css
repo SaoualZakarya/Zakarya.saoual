@@ -53,3 +53,45 @@ a {
 .error{
     @apply text-[12px] text-red-600
 }
+
+.project::before{
+    content:'';
+    width:0;
+    height:0;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:20;
+    transition:.5s ;
+    border-radius: 20px;
+}
+
+.project:hover::before{
+    width:100%;
+    z-index:20;
+    height:100%;
+    background-color:black;
+    filter : blur(3px);
+    opacity:.8
+}
+
+.project-text{
+    display:none;
+    position:absolute;
+    top:10%;
+    z-index:50;
+    bottom:10%;
+    left:10%;
+    right:10%;
+    color:#fff;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    transition:1s
+}   
+
+.project:hover .project-text{
+    display:flex;
+}
+
+

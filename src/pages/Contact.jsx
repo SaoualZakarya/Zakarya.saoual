@@ -3,9 +3,11 @@ import {FaLocationDot} from 'react-icons/fa6'
 import {BiPhoneCall} from 'react-icons/bi'
 import {AiOutlineMail} from 'react-icons/ai'
 import { Title } from "../component/Title"
+import { useRef } from 'react';
 import {CustomInput} from '../component/CustomInput'
 import * as Yup from 'yup'; 
 import {useFormik} from 'formik'
+import emailjs from '@emailjs/browser';
 import { useNavigate } from "react-router-dom"
 
 let contactSchema = Yup.object({
@@ -15,7 +17,21 @@ let contactSchema = Yup.object({
   desc: Yup.string().min(25,"description at least 25 char").required('description is required'),
 });
 
+
+
 export const Contact = () => {
+
+  const form = useRef();
+
+  const sendEmail = () => {
+
+  emailjs.sendForm('service_yuqv0c4', 'template_0dnxflc', form.current, 'zxb-F2kUunlq8VNuU')
+    .then((result) => {
+      console.log(result.text);
+    }, (error) => {
+      console.log(error.text);
+    });
+};
 
   const navigate = useNavigate()
 
@@ -28,7 +44,7 @@ export const Contact = () => {
     },
     validationSchema: contactSchema,
     onSubmit: (values,{resetForm}) => {
-      alert(JSON.stringify(values, null, 2))
+      sendEmail(values)
       resetForm();
       setTimeout(() => {
         navigate('/');
@@ -84,10 +100,11 @@ export const Contact = () => {
             <Title ele={'How can I help You  ?'} />
             <form 
               onSubmit={formik.handleSubmit}
+              ref={form} 
             >
               <div className="flex flex-col gap-5 w-[380px] md:w-[420px]">
                 <CustomInput 
-                  name='Name' 
+                  name='user_name' 
                   type='text'
                   placeHolder={'Enter your Full Name'}
                   onChange={(e) => formik.handleChange('name')(e)} 
@@ -111,7 +128,7 @@ export const Contact = () => {
                     ) : null }
                 </div>
                 <CustomInput 
-                  name='subject' 
+                  name='Subject' 
                   type='text' 
                   placeHolder={'Subject '} 
                   onChange={(e) => formik.handleChange('subject')(e)} 
@@ -125,6 +142,7 @@ export const Contact = () => {
                 <textarea
                   className=" text-inherit h-[160px] font-semibold w-full p-3 rounded-xl border-2 dark:bg-[#222] bg-white outline-none border-[#bfbfbf] dark:border-[#555] border-solid"
                   placeholder="Enter Your Message Here..."
+                  name='message'
                   onChange={(e) => formik.handleChange('desc')(e)} 
                   value={formik.values.desc}
                 > </textarea>
