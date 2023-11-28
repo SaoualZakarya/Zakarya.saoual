@@ -117,7 +117,7 @@ export const AboutMe = () => {
       {/* Clients */}
       <section className="container py-20">
         <Title ele={'Clients'} />
-          <div className="flex justify-center text-[25px] font-extrabold"> Pending for now ....  </div>  
+          <div className="flex justify-center text-[25px] font-extrabold">  On the way ....  </div>  
       </section>
     </>
   )

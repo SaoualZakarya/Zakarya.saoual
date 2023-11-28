@@ -82,12 +82,12 @@ export const Resume = () => {
         <div className="container py-14 ">
           <Title ele={"certificate"}/>
           <swiper-container>
-            <div className="swiper flex justify-center items-center w-[400px] h-[280px]">
+            <div className="swiper flex justify-center items-center w-[400px] md:w-[440px] h-[280px] md:h-[300px]">
               <div className="swiper-wrapper flex items-center">
                 <div className="swiper-slide  flex items-center">
                   <a 
                     href="https://www.freecodecamp.org/certification/fcc529bb7f4-01aa-4625-96aa-e38dcffd4089/responsive-web-design"
-                    className="border-2 hover:shadow-2xl border-solid rounded-xl border-[#e5e5e5] dark:border-[#444444] flex w-[400px] h-fit"
+                    className="border-2 hover:shadow-2xl border-solid rounded-xl border-[#e5e5e5] dark:border-[#444444] flex w-full h-fit"
                   >
                     <div className="flex rounded-l-md items-center justify-center bg-[#f5f5f5] dark:bg-[#444444] w-[150px]">
                       FREE CODE CAMP
@@ -101,7 +101,7 @@ export const Resume = () => {
                 <div className="swiper-slide flex items-center">
                   <a 
                     href="https://www.freecodecamp.org/certification/fcc529bb7f4-01aa-4625-96aa-e38dcffd4089/javascript-algorithms-and-data-structures"
-                    className="border-2 hover:shadow-2xl border-solid rounded-xl border-[#e5e5e5] dark:border-[#444444] flex w-[400px] h-fit"
+                    className="border-2 hover:shadow-2xl border-solid rounded-xl border-[#e5e5e5] dark:border-[#444444] flex w-full h-fit"
                   >
                     <div className="flex rounded-l-md items-center justify-center bg-[#f5f5f5] dark:bg-[#444444] w-[150px]">
                       FREE CODE CAMP
@@ -117,7 +117,7 @@ export const Resume = () => {
                     <img 
                       loading="lazy"
                       src={'/certificate/python2.png'} 
-                      className="w-[400px] rounded-xl h-[240px] " 
+                      className="w-full rounded-xl h-[240px] " 
                       alt="python"
                     />
                   </a>
@@ -127,7 +127,7 @@ export const Resume = () => {
                     <img 
                       loading="lazy"
                       src={'/certificate/python.jpeg'}
-                      className="w-[400px] rounded-xl h-[240px] " 
+                      className="w-full rounded-xl h-[240px] " 
                       alt="python"
                     />
                   </a>
@@ -136,7 +136,7 @@ export const Resume = () => {
                   <img  
                     loading="lazy"
                     src={'/certificate/bytecraft.png'} 
-                    className="w-[400px] rounded-xl h-[240px] " 
+                    className="w-full rounded-xl h-[240px] " 
                     alt="Bytecraft"
                   />
                 </div>
@@ -144,8 +144,24 @@ export const Resume = () => {
                   <img 
                     loading="lazy"
                     src={'/certificate/brainOn.png'} 
-                    className="w-[400px] rounded-xl h-[240px] "
+                    className="w-full rounded-xl h-[240px] "
                     alt="BrainOn"
+                  />
+                </div>
+                <div className="swiper-slide">
+                  <img 
+                    loading="lazy"
+                    src={'/certificate/computer_science.png'} 
+                    className="w-full rounded-xl h-[240px] "
+                    alt="computer_science"
+                  />
+                </div>
+                <div className="swiper-slide">
+                  <img 
+                    loading="lazy"
+                    src={'/certificate/nextrace.png'} 
+                    className="w-full rounded-xl h-[240px] "
+                    alt="next_trace"
                   />
                 </div>
               </div>
