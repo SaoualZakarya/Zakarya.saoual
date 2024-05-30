@@ -23,7 +23,7 @@ export const Footer = () => {
                 <a className='blok' href='https://www.linkedin.com/in/zakaria-saoual/'>
                      <AiFillLinkedin className='text-[30px] dark:text-white dark:hover:text-blue-600 hover:text-blue-600' />
                 </a>
-                <a className='blok' href='https://www.instagram.com/zakarya_tech/'>
+                <a className='blok' href='https://www.instagram.com/zakarya.saoual/'>
                      <AiOutlineInstagram className='text-[30px] dark:text-white dark:hover:text-pink-400 hover:text-pink-400' />
                 </a>
                 <a className='blok' href='mailto:zakaryasaoual@gmail.com'>

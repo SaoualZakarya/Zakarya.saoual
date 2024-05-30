@@ -82,7 +82,7 @@ export const Resume = () => {
         <div className="container py-14 ">
           <Title ele={"certificate"}/>
           <swiper-container>
-            <div className="swiper flex justify-center items-center w-[400px] md:w-[440px] h-[280px] md:h-[300px]">
+            <div className="swiper flex justify-center items-center w-[400px] md:w-[44cide0px] h-[280px] md:h-[300px]">
               <div className="swiper-wrapper flex items-center">
                 <div className="swiper-slide  flex items-center">
                   <a 
