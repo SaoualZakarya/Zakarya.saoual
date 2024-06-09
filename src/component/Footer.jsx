@@ -17,7 +17,7 @@ export const Footer = () => {
                 transition={{delay:.5}}
               className='flex gap-5'
             > 
-                <a className='' href='https://github.com/zakaryaalgeria'> 
+                <a className='' href='https://github.com/saoualzakarya'> 
                     <AiFillGithub className='text-[30px] dark:text-white  dark:hover:text-gray-400 hover:text-gray-400' />
                 </a>
                 <a className='blok' href='https://www.linkedin.com/in/zakaria-saoual/'>

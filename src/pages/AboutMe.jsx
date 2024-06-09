@@ -7,11 +7,12 @@ import {FaFileCode} from 'react-icons/fa'
 import {RiCodeBoxLine} from 'react-icons/ri'
 export const AboutMe = () => {
 
-  const currentJobs = ['Computer science engeneering student',
-  'Content Creator',
-  'Front-end web developer',
-  'Full stack web developer',
-  'Cyber security entoushiaste'
+  const currentJobs = [
+    'Computer science engeneering student',
+    'Full stack web developer',
+    'Cyber security entoushiaste',
+    'Content Creator',
+    'Video Editor'
   ]
 
   return (

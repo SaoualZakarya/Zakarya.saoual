@@ -1,8 +1,6 @@
-import { useEffect } from "react"
-import Swiper from 'swiper';
-import {  Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination } from "swiper/modules";
 import 'swiper/css';
-import 'swiper/css/pagination';
 import { PageTitlte } from "../component/PageTitlte"
 import { Title } from "../component/Title"
 import {motion} from 'framer-motion'
@@ -10,25 +8,62 @@ import { edu_exp, lang_tools } from "../utils/data";
 
 export const Resume = () => {
 
-  useEffect(() => {
-    const swiper = new Swiper('.swiper', {
-      modules: [Pagination,Autoplay],
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      autoplay: {
-        delay: 3000, // Delay between slides (in milliseconds)
-        disableOnInteraction: false, // Continue autoplay on user interaction
-      }
-    });
-    
-    return () => {
-      swiper.destroy();
-    };
-  }, []);
 
-  const getCurrentYear = new Date().getFullYear()
+  const getCurrentYear = new Date().getFullYear();
+
+  const certificateArray = [
+    {
+      src:'/certificate/python2.png',
+      link:'https://www.coursera.org/account/accomplishments/verify/5DDL4TVDP52S',
+      title:'python2',
+      i:0
+    },
+    {
+      src:'/certificate/python.jpeg',
+      link:'https://www.coursera.org/account/accomplishments/verify/5M2V67K8Z5LR',
+      title:'Python',
+      i:1
+    },
+    {
+      src:'/certificate/computer_science.png',
+      link:'/',
+      title:'computer_science',
+      i:2
+    },
+    {
+      src:'/certificate/Responsive_web_design.png',
+      link:'https://www.freecodecamp.org/certification/fcc529bb7f4-01aa-4625-96aa-e38dcffd4089/responsive-web-design',
+      title:'Web_Design',
+      i:3
+    },
+    {
+      src:'/certificate/Javascript.png',
+      link:'https://www.freecodecamp.org/certification/fcc529bb7f4-01aa-4625-96aa-e38dcffd4089/javascript-algorithms-and-data-structures',
+      title:'Javascript',
+      i:4
+    },
+    {
+      src:'/certificate/bytecraft.png',
+      title:'Bytecraft',
+      i:5
+    },
+    {
+      src:'/certificate/brainOn.png',
+      title:'BrainOn',
+      i:6
+    },
+    {
+      src:'/certificate/nextrace.png',
+      title:'next_trace',
+      i:7
+    },
+    {
+      src:'/certificate/nexus0.png',
+      title:'next_0_ctf',
+      i:8
+    },
+  ];
+
 
   return (
     <>
@@ -81,93 +116,39 @@ export const Resume = () => {
         </div>
         <div className="container py-14 ">
           <Title ele={"certificate"}/>
-          <swiper-container>
-            <div className="swiper flex justify-center items-center w-[400px] md:w-[44cide0px] h-[280px] md:h-[300px]">
-              <div className="swiper-wrapper flex items-center">
-                <div className="swiper-slide  flex items-center">
-                  <a 
-                    href="https://www.freecodecamp.org/certification/fcc529bb7f4-01aa-4625-96aa-e38dcffd4089/responsive-web-design"
-                    className="border-2 hover:shadow-2xl border-solid rounded-xl border-[#e5e5e5] dark:border-[#444444] flex w-full h-fit"
-                  >
-                    <div className="flex rounded-l-md items-center justify-center bg-[#f5f5f5] dark:bg-[#444444] w-[150px]">
-                      FREE CODE CAMP
-                    </div>
-                    <div className="p-4 max-w-[230px]">
-                      <h1 className="font-bold"> Responsive Web Design</h1>
-                      <p className="text-[12px] py-2">16 March 2023</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="swiper-slide flex items-center">
-                  <a 
-                    href="https://www.freecodecamp.org/certification/fcc529bb7f4-01aa-4625-96aa-e38dcffd4089/javascript-algorithms-and-data-structures"
-                    className="border-2 hover:shadow-2xl border-solid rounded-xl border-[#e5e5e5] dark:border-[#444444] flex w-full h-fit"
-                  >
-                    <div className="flex rounded-l-md items-center justify-center bg-[#f5f5f5] dark:bg-[#444444] w-[150px]">
-                      FREE CODE CAMP
-                    </div>
-                    <div className="p-4 max-w-[230px]">
-                      <h1 className="font-bold"> JavaScript Algorithms and Data Structure</h1>
-                      <p className="text-[12px] py-2">16 March 2023</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="swiper-slide">
-                  <a href="https://www.coursera.org/account/accomplishments/verify/5DDL4TVDP52S">
-                    <img 
-                      loading="lazy"
-                      src={'/certificate/python2.png'} 
-                      className="w-full rounded-xl h-[240px] " 
-                      alt="python"
-                    />
-                  </a>
-                </div>
-                <div className="swiper-slide">
-                  <a href="https://www.coursera.org/account/accomplishments/verify/5M2V67K8Z5LR">
-                    <img 
-                      loading="lazy"
-                      src={'/certificate/python.jpeg'}
-                      className="w-full rounded-xl h-[240px] " 
-                      alt="python"
-                    />
-                  </a>
-                </div>
-                <div className="swiper-slide">
-                  <img  
-                    loading="lazy"
-                    src={'/certificate/bytecraft.png'} 
-                    className="w-full rounded-xl h-[240px] " 
-                    alt="Bytecraft"
-                  />
-                </div>
-                <div className="swiper-slide">
-                  <img 
-                    loading="lazy"
-                    src={'/certificate/brainOn.png'} 
-                    className="w-full rounded-xl h-[240px] "
-                    alt="BrainOn"
-                  />
-                </div>
-                <div className="swiper-slide">
-                  <img 
-                    loading="lazy"
-                    src={'/certificate/computer_science.png'} 
-                    className="w-full rounded-xl h-[240px] "
-                    alt="computer_science"
-                  />
-                </div>
-                <div className="swiper-slide">
-                  <img 
-                    loading="lazy"
-                    src={'/certificate/nextrace.png'} 
-                    className="w-full rounded-xl h-[240px] "
-                    alt="next_trace"
-                  />
-                </div>
-              </div>
-              <div  className="swiper-pagination"></div>
-            </div>
-          </swiper-container> 
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            slideToClickedSlide={true}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            initialSlide={2}
+            
+            coverflowEffect={{
+              rotate: 0,
+              stretch: -60,
+              depth: 100,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            modules={[EffectCoverflow, Pagination]}
+            className="mentorSlider"
+          >
+                {
+                  certificateArray.map(item=>(
+                    <SwiperSlide key={item.i} className="h-[220px] w-[350px] md:h-[250px] md:w-[460px] ">
+                      <a href={item?.link}>
+                        <img 
+                          loading="lazy"
+                          src={item.src} 
+                          className="w-full h-full rounded-xl  " 
+                          alt={item.title}
+                        />
+                      </a>
+                    </SwiperSlide>
+                  ))
+                }
+          </Swiper> 
         </div>
       </section>
     </>
