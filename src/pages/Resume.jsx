@@ -26,18 +26,18 @@ export const Resume = () => {
       <section >
         <PageTitlte title={'Resume'} desc={`${getCurrentYear - 2022} Years of Experience`} />
         <div className="container flex flex-wrap py-14 md:justify-between justify-center">
-          <div className="w-[450px]">
+          <div className="w-[400px] md:w-[450px]">
             <Title ele={'Education && Exprience'} />
             {education?.map((ele,i)=>(
               <motion.div 
               key={i} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.5}}
-              className="relative bg-[#fdfdfd] dark:bg-[#252525]  my-16 h-fit rounded-tr-2xl border-l-2 border-b-2 border-solid border-[#f5f6f9] dark:border-[#333333] p-4"
+              className="relative bg-[#fdfdfd] dark:bg-[#252525]  my-16 h-fit rounded-tr-2xl border-l-2 border-b-2 border-solid border-[#f5f6f9] dark:border-[#333333] p-2 md:p-4"
               >
-                <div className="-ml-[80px] -mt-8 flex items-center gap-3">
-                  <div className="w-[150px] font-semibold text-[14px] py-1 border-2 text-center border-solid rounded-2xl border-[#007ced]">
+                <div className="-ml-[30px] -mt-8 flex items-center gap-3">
+                  <div className="w-[130px] flex-1 font-semibold text-[14px] py-1 border-2 text-center border-solid rounded-2xl border-[#007ced]">
                     {ele.year}
                   </div>
-                  <div className="text-[16px] font-semibold  text-[#666666] dark:text-[#AAAAAA]">
+                  <div className="md:text-[16px] w-[270px] md:w-[300px] text-[16px] font-semibold  text-[#666666] dark:text-[#AAAAAA]">
                     {ele.school} 
                   </div>
                 </div>
