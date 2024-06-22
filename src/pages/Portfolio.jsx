@@ -29,11 +29,11 @@ export const Portfolio = () => {
                   <div className='text-[16px] font-semibold' >View sourse code</div>
                   <div className='flex gap-8'> 
                     {
-                      item.githubLinkFront === "/" ? <span  className="px-3 py-1 cursor-pointer rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#6c757d] hover:text-white border-[#6c757d]" > {item.status} </span>
+                      item.githubLinkFront === "/" ? <span  className="px-3 py-1 cursor-pointer rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#6c757d] hover:text-white border-[#6c757d]" > {`${item.status}`} </span>
                       :<a href={`${item.githubLinkFront}`} className="px-3 py-1 rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#6c757d] hover:text-white border-[#6c757d]"> Front-end </a>
                     }
                     {      
-                      item.githubLinkBack === "/" ? <span  className="px-3 py-1 cursor-pointer rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#6c757d] hover:text-white border-[#6c757d]" > {item.status} </span>              
+                      item.githubLinkBack === "/" ? <span  className="px-3 py-1 cursor-pointer rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#6c757d] hover:text-white border-[#6c757d]" > {`${item.status}`} </span>              
                      :<a href={`${item.githubLinkBack}`} className="px-3 py-1 rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#6c757d] hover:text-white border-[#6c757d]">Back-end</a>
                     }
                   </div>
