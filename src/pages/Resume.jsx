@@ -26,7 +26,7 @@ export const Resume = () => {
       <section >
         <PageTitlte title={'Resume'} desc={`${getCurrentYear - 2022} Years of Experience`} />
         <div className="container flex flex-wrap py-14 md:justify-between justify-center">
-          <div className="w-[400px] md:w-[450px]">
+          <div className="w-[340px] md:w-[450px]">
             <Title ele={'Education && Exprience'} />
             {education?.map((ele,i)=>(
               <motion.div 
