@@ -5,15 +5,21 @@ import { Title } from "../component/Title"
 import {FaLaptopCode} from 'react-icons/fa'
 import {FaFileCode} from 'react-icons/fa'
 import {RiCodeBoxLine} from 'react-icons/ri'
+import { services } from "../utils/localData"
 export const AboutMe = () => {
 
   const currentJobs = [
     'Computer science engeneering student',
     'Full stack web developer',
     'Cyber security entoushiaste',
-    'Content Creator',
-    'Video Editor'
+    'Content Creator'
   ]
+
+  const iconMap = {
+    FaLaptopCode: FaLaptopCode,
+    FaFileCode: FaFileCode,
+    RiCodeBoxLine: RiCodeBoxLine,
+  };
 
   return (
     <>
@@ -74,50 +80,25 @@ export const AboutMe = () => {
       <section className="container pb-20">
         <Title ele={'What I Do'}/>
         <div className="flex flex-wrap gap-8 justify-center lg:gap-10"> 
-          <div className="flex items-center gap-4 w-[380px] p-4 hover:scale-[1.05] dark:bg-[#333333] rounded-3xl hover:cursor-pointer shadow-2xl">
-            <div className="w-[50px]">
-              <FaLaptopCode className="w-10 h-10"/>
-            </div>
-            <div>
-              <h1 className="font-semibold pb-1 text-[18px]">Front-End web Development</h1>
-              <p className="text-[#666666] dark:text-white indent-4"> 
-                We create stunning and responsive user interfaces, 
-                ensuring seamless navigation and engaging user experiences.
-                Let us transform your vision into a visually appealing and interactive digital platform. 
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 w-[380px] p-4 hover:scale-[1.05] dark:bg-[#333333] rounded-3xl hover:cursor-pointer shadow-2xl">
-            <div className="w-[50px]">
-              <FaFileCode className="w-10 h-10"/>
-            </div>
-            <div>
-              <h1 className="font-semibold pb-1 text-[18px]">Back-End Development</h1>
-              <p className="text-[#666666] dark:text-white indent-4"> 
-                We specialize in building robust server-side applications, databases, and APIs,
-                ensuring your website or application runs efficiently, securely, and smoothly.
-                Let us handle the complexities, while you focus on your business goals. 
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 w-[380px] p-4 hover:scale-[1.05] dark:bg-[#333333] rounded-3xl hover:cursor-pointer shadow-2xl">
-            <div className="w-[50px]">
-              <RiCodeBoxLine className="w-10 h-10"/>
-            </div>
-            <div>
-              <h1 className="font-semibold pb-1 text-[18px]">Full-stack web Development</h1>
-              <p className="text-[#666666] dark:text-white indent-4"> 
-                From intuitive front-end designs to powerful back-end functionality, we create dynamic,
-                user-friendly websites and applications tailored to your unique needs.
-                Experience a seamless digital journey from concept to launch.
-              </p>
-            </div>
-          </div>
+          {services.map((service) => {
+            const IconComponent = iconMap[service.icon];
+            return (
+              <div key={service.id} className="flex items-center gap-4 w-[380px] p-4 hover:scale-[1.05] dark:bg-[#333333] rounded-3xl hover:cursor-pointer shadow-2xl">
+                <div className="w-[50px]">
+                  <IconComponent className="w-10 h-10" />
+                </div>
+                <div>
+                  <h1 className="font-semibold pb-1 text-[18px]">{service.title}</h1>
+                  <p className="text-[#666666] dark:text-white indent-4">{service.description}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
       {/* Clients */}
       <section className="container py-20">
-        <Title ele={'Clients'} />
+        <Title ele={'satisfied Clients'} />
           <div className="flex justify-center text-[25px] font-extrabold">  On the way ....  </div>  
       </section>
     </>

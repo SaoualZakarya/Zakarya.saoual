@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@sanity/client": "^6.20.1",
+    "@sanity/image-url": "^1.0.2",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",

@@ -39,16 +39,16 @@ export const NavBar = () => {
   return (
     <>
         <header className="flex justify-between items-center py-8 px-6 md:px-12 mx-auto my-0 shadow-md">
-            <motion.Link 
+            <motion.a
               initial={{x:-300}}
               animate={{ x:0 }}
               transition={{delay:.3}}
-              to={'/'} 
+              href="/"
               className="flex items-center gap-4 text-[#222222] dark:text-white"
             >
                 <div className="rounded-[50%] bg-[#007ced] w-9 h-9 font-extrabold flex justify-center items-center text-white text-[18px]"> Z </div>
                 <div className="text-[18px]"> <span className="font-extrabold pr-2">Zakarya</span><span className="font-medium">Saoual</span> </div>
-            </motion.Link>
+            </motion.a>
             <motion.button
               initial={{y:-100}}
               animate={{ y:0 }}
