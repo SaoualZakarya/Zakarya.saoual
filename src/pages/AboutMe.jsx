@@ -6,7 +6,16 @@ import {FaLaptopCode} from 'react-icons/fa'
 import {FaFileCode} from 'react-icons/fa'
 import {RiCodeBoxLine} from 'react-icons/ri'
 import { services } from "../utils/localData"
+import { useEffect } from "react"
+import posthog from "posthog-js"
+
 export const AboutMe = () => {
+
+  useEffect(() => {
+    posthog.capture('profile_visited', {
+      distinct_id: posthog.get_distinct_id(),
+    });
+  }, []);
 
   const currentJobs = [
     'Computer science engeneering student',
@@ -33,7 +42,7 @@ export const AboutMe = () => {
             <motion.img
               whileHover={{scale:0.96}} 
               src="/personal/zakarya.png" 
-              className="border-white w-[400px] h-[400px] shadow-2xl dark:border-[#343a40] border-[16px] hover:cursor-pointer rounded-[50%]" 
+              className="border-white w-[330px] h-[330px]  md:w-[400px] md:h-[400px] shadow-2xl dark:border-[#343a40] border-[16px] hover:cursor-pointer rounded-[50%]" 
               alt="personal image"
             />
         </motion.div>
@@ -41,7 +50,7 @@ export const AboutMe = () => {
           initial={{x:800}}
           animate={{ x:0 }}
           transition={{delay:.3}}
-          className="max-w-[440px]"
+          className=" max-w-[350px] md:max-w-[440px]"
         >
           <Marquee className="w-[300px] h-[30px] text-[#aaaaaa] py-3">
             {currentJobs.map((job, i) => (
@@ -51,7 +60,7 @@ export const AboutMe = () => {
             ))}
           </Marquee>
           <div 
-            className="font-extrabold uppercase text-[40px] text-[#333333] dark:text-[#F5F5F5] py-3"
+            className="font-extrabold uppercase text-[32px] md:text-[40px] text-[#333333] dark:text-[#F5F5F5] py-3"
           >
             Saoual zakarya
           </div>

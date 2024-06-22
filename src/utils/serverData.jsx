@@ -9,7 +9,6 @@ export async function getBlogs() {
       image
     }`;
     const blogs = await client.fetch(query);
-    console.log("Fetched blogs:", blogs);
     return blogs;
   } catch (error) {
     console.error('Error fetching blogs:', error);
@@ -26,7 +25,6 @@ export async function getEducation() {
       desc 
     }`;
     const education = await client.fetch(query);
-    console.log("Fetched education data:", education);
     return education;
   } catch (error) {
     console.error('Error fetching education:', error);
@@ -42,7 +40,6 @@ export async function getToolsAndLanguages() {
       title
     }`;
     const toolLang = await client.fetch(query);
-    console.log("Fetched tools and languages:", toolLang);
     return toolLang;
   } catch (error) {
     console.error('Error fetching tools and languages:', error);
@@ -63,7 +60,6 @@ export async function getProjects() {
       demoLink
     }`;
     const projects = await client.fetch(query);
-    console.log("Fetched projects:", projects);
     return projects;
   } catch (error) {
     console.error('Error fetching projects:', error);
@@ -80,7 +76,6 @@ export async function getCertificate() {
       title
     }`;
     const certificates = await client.fetch(query);
-    console.log("Fetched certificates:", certificates);
     return certificates;
   } catch (error) {
     console.error('Error fetching certificates:', error);

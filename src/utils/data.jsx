@@ -36,15 +36,6 @@ export const projects = [
         demoLink:'https://weather-app-react-bay-tau.vercel.app'
     },
     {
-        title: 'Movies App',
-        img:'/project/movie_app.png',
-        description: 'Enhanced movie app, offering advanced film filtering, comprehensive film details, and instant access to watch your desired films. ',
-        techUsedLogo: ['/tools/react.png','/tools/api.png'],
-        githubLinkFront: 'https://github.com/zakaryaalgeria/Movies-app',
-        githubLinkBack: '' ,
-        demoLink:'https://movies-app-six-rouge.vercel.app'
-    },
-    {
         title: 'Ecommerce shop dashboard',
         img:'',
         description: 'This is full stack web project that allow to manage whole ecommerce shop .This is the admin Dashboard page',
