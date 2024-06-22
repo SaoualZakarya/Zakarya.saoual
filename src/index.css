@@ -93,7 +93,4 @@ a {
     display:flex;
 }
 
-.rfm-marquee-container{
-    @apply w-[300px] h-[30px]
-}
 
