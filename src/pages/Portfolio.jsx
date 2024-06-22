@@ -20,7 +20,7 @@ export const Portfolio = () => {
             projects.map((item,key)=>(
               <div 
                 style={{backgroundImage:`url(${urlFor(item.img).url()})`,backgroundSize: 'cover'}} 
-                className="project relative rounded-2xl w-[400px] lg:w-[450px] h-[470px]" 
+                className="project relative rounded-2xl w-[400px] lg:w-[450px] h-[500px]" 
                 key={key}
               >
                 <div className='project-text'>

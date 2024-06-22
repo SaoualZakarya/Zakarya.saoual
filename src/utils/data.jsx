@@ -27,15 +27,6 @@ export const projects = [
         demoLink:'https://junction-hackathon-backend.vercel.app'
     },
     {
-        title: 'Weather App React',
-        img:'/project/weather_img.jpg',
-        description: 'Weather app that provide users with the temperature and other thing relating to weather for 4 days every three hours with the feature of the current location ',
-        techUsedLogo: ['/tools/react.png','/tools/api.png'],
-        githubLinkFront: 'https://github.com/zakaryaalgeria/weather-app-react',
-        githubLinkBack: '' ,
-        demoLink:'https://weather-app-react-bay-tau.vercel.app'
-    },
-    {
         title: 'Ecommerce shop dashboard',
         img:'',
         description: 'This is full stack web project that allow to manage whole ecommerce shop .This is the admin Dashboard page',
