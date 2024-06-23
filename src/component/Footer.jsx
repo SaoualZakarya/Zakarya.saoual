@@ -34,8 +34,9 @@ export const Footer = () => {
                 initial={{x:500}}
                 animate={{ x:0 }}
                 transition={{delay:.5}} 
+                className='text-center'
             >&copy; {currentYear} All rights reserved 
-              <span className="pl-2  font-bold uppercase">
+              <span className="pl-2 font-bold uppercase">
                 saoual zakarya
               </span>
             </motion.div>

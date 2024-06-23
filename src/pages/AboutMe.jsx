@@ -33,7 +33,7 @@ export const AboutMe = () => {
   return (
     <>
     {/* Photo , CV and jobs */}
-      <section className="container py-14 flex lg:flex-row flex-col items-center gap-8 lg:gap-[100px]">
+      <section className="container py-14 flex lg:flex-row flex-col items-center gap-7 lg:justify-between">
         <motion.div 
           initial={{ scale:0,oppacity:0 }}
           animate={{ scale: 1,oppacity:1 }}
@@ -42,7 +42,7 @@ export const AboutMe = () => {
             <motion.img
               whileHover={{scale:0.96}} 
               src="/personal/zakarya.png" 
-              className="border-white w-[330px] h-[330px]  md:w-[400px] md:h-[400px] shadow-2xl dark:border-[#343a40] border-[16px] hover:cursor-pointer rounded-[50%]" 
+              className="border-white aspect-w-1 aspect-h-1  sm:w-[400px] sm:h-[400px] shadow-2xl dark:border-[#343a40] border-[16px] hover:cursor-pointer rounded-[50%]" 
               alt="personal image"
             />
         </motion.div>
@@ -50,7 +50,7 @@ export const AboutMe = () => {
           initial={{x:800}}
           animate={{ x:0 }}
           transition={{delay:.3}}
-          className=" max-w-[350px] md:max-w-[440px]"
+          className=" md:max-w-[440px]"
         >
           <Marquee className="w-[300px] h-[30px] text-[#aaaaaa] py-3">
             {currentJobs.map((job, i) => (

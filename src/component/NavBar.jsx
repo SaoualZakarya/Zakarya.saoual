@@ -38,16 +38,16 @@ export const NavBar = () => {
 
   return (
     <>
-        <header className="flex justify-between items-center py-8 px-6 md:px-12 mx-auto my-0 shadow-md">
+        <header className="flex justify-between items-center py-8 px-3 md:px-12 mx-auto my-0 shadow-md">
             <motion.a
               initial={{x:-300}}
               animate={{ x:0 }}
               transition={{delay:.3}}
               href="/"
-              className="flex items-center gap-4 text-[#222222] dark:text-white"
+              className="flex items-center gap-2 md:gap-4 text-[#222222] dark:text-white"
             >
-                <div className="rounded-[50%] bg-[#007ced] w-9 h-9 font-extrabold flex justify-center items-center text-white text-[18px]"> Z </div>
-                <div className="text-[18px]"> <span className="font-extrabold pr-2">Zakarya</span><span className="font-medium">Saoual</span> </div>
+                <div className="rounded-[50%] bg-[#007ced] w-7 h-7 md:w-9 md:h-9 font-extrabold flex justify-center items-center text-white text-[16px] md:text-[18px]"> Z </div>
+                <div className="text-[16px] md:text-[18px]"> <span className="font-extrabold pr-1 md:pr-2">Zakarya</span><span className="font-medium">Saoual</span> </div>
             </motion.a>
             <motion.button
               initial={{y:-100}}
@@ -57,10 +57,10 @@ export const NavBar = () => {
             >
                 {!darkMode ? 
                 <div className='flex gap-1 items-center '><MdDarkMode className="w-6 h-6"/> 
-                   <p className="font-semibold text-[18px] uppercase"> Dark</p>
+                   <p className="font-semibold text-[16px] md:text-[18px] uppercase"> Dark</p>
                 </div> : 
                 <div className='flex gap-1 items-center text-yellow-400'><BsSun className="w-6 h-6"/> 
-                  <p className="font-semibold text-[18px] uppercase"> Light</p>
+                  <p className="font-semibold text-[16px] md:text-[18px] uppercase"> Light</p>
                 </div>}
             </motion.button>
             <motion.nav 
@@ -91,7 +91,7 @@ export const NavBar = () => {
         </header>
         {
             !collapsed && (
-                <div className="bg-white dark:bg-[#222222] lg:hidden fixed font-bold z-30 right-0 transition duration-1000 top-[150px] w-[240px] rounded-l-3xl h-fit ">
+                <div className="bg-white shadow-2xl dark:bg-[#222222ec] lg:hidden fixed font-bold z-30 right-0 transition duration-1000 top-[102px] w-[240px] rounded-l-3xl h-fit ">
                     <div className="flex flex-col gap-10 items-center py-14">
                         <NavLink to="/" className={` ${isActive('/') ? 'text-[#333333] dark:text-white' : 'text-[#C5D6D0]'}`}>
                             About Me
