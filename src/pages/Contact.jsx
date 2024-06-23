@@ -23,10 +23,6 @@ export const Contact = () => {
 
   const form = useRef();
 
-  console.log(import.meta.env.VITE_SERVICE_KEY)
-  console.log(import.meta.env.VITE_TEMPLATE_ID)
-  console.log(import.meta.env.VITE_PUBLIC_KEY)
-
   const sendEmail = () => {
 
   emailjs.sendForm(import.meta.env.VITE_SERVICE_KEY, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_KEY)
@@ -59,9 +55,7 @@ export const Contact = () => {
   return (
     <section>
       <PageTitlte title={'Contact'} desc={'Get in touch'} />
-      <div
-        className="container py-20"
-      >
+      <div className="container py-20">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173867.2920544374!2d4.89028787661351!3d35.930064003491054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128cace3c911151f%3A0x560b498ef8b564b9!2sRas%20El%20Oued!5e0!3m2!1sfr!2sdz!4v1699003340137!5m2!1sfr!2sdz" 
           loading="lazy" 
@@ -70,8 +64,9 @@ export const Contact = () => {
         >
         </iframe>
         <div className="flex lg:justify-between justify-center flex-wrap ">
+          {/* Location , number , Email */}
           <div className="">
-            <div className="flex hover:shadow-2xl hover:scale-[1.1] bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-8 w-[350px] items-center">
+            <div className="flex hover:shadow-2xl hover:scale-[1.05] sm:hover:scale-[1.1] bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-4 sm:gap-8 w-[300px] sm:w-[350px] items-center">
               <BiPhoneCall className="w-16 h-16 text-[#007ced]"/>
               <div>
                 <h1 className="font-bold text-[19px]">+213668581327</h1>
@@ -80,7 +75,7 @@ export const Contact = () => {
                 </p>
               </div>
             </div>
-            <div className="flex hover:shadow-2xl hover:scale-[1.1]  bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl py-8 gap-8 w-[350px] items-center">
+            <div className="flex hover:shadow-2xl hover:scale-[1.05] sm:hover:scale-[1.1]  bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl py-8 gap-4 sm:gap-8 w-[300px] sm:w-[350px] items-center">
               <FaLocationDot className="w-10 h-10 text-[#007ced]"/>
               <div>
                 <h1 className="font-bold text-[19px]">Algeria</h1>
@@ -89,7 +84,7 @@ export const Contact = () => {
                 </p>
               </div>
             </div>
-            <div className="flex hover:shadow-2xl hover:scale-[1.1] bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-8 w-[350px] items-center">
+            <div className="flex hover:shadow-2xl hover:scale-[1.05] sm:hover:scale-[1.1] bg-[#fdfdfd] dark:bg-[#252525] mb-6 px-3 rounded-2xl  py-8 gap-4 sm:gap-8 w-[300px] sm:w-[350px] items-center">
               <AiOutlineMail className="w-16 h-12 text-[#007ced]"/>
               <div>
               <a href="mailto:zakaryasaoual@gmail.com" className="font-bold text-[19px]">zakaryasaoual@gmail.com</a>
@@ -98,15 +93,14 @@ export const Contact = () => {
                 </p>
               </div>
             </div>
-            
           </div>
-          <div>
+          <div className="">
             <Title ele={'How can I help You  ?'} />
             <form 
               onSubmit={formik.handleSubmit}
               ref={form} 
             >
-              <div className="flex flex-col gap-5 w-[380px] md:w-[420px]">
+              <div className="flex flex-col gap-5 w-[300px] sm:w-[420px]">
                 <CustomInput 
                   name='user_name' 
                   type='text'
