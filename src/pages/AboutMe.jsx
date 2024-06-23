@@ -50,9 +50,9 @@ export const AboutMe = () => {
           initial={{x:800}}
           animate={{ x:0 }}
           transition={{delay:.3}}
-          className=" md:w-[440px]"
+          className="w-[300px] md:w-[440px]"
         >
-          <Marquee className="w-[300px] h-[30px] text-[#aaaaaa] py-3">
+          <Marquee className="w-full h-[30px] text-[#aaaaaa] py-3">
             {currentJobs.map((job, i) => (
               <div className='px-10 text-[18px]' key={i}>
                 {job} 
