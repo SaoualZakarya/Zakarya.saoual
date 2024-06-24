@@ -44,6 +44,7 @@ export const AboutMe = () => {
               src="/personal/zakarya.webp" 
               className="border-white aspect-w-1 aspect-h-1  sm:w-[400px] sm:h-[400px] shadow-2xl dark:border-[#343a40] border-[16px] hover:cursor-pointer rounded-[50%]" 
               alt="personal image"
+              loading="lazy"
             />
         </motion.div>
         <motion.div
@@ -95,7 +96,7 @@ export const AboutMe = () => {
             return (
               <div key={service.id} className="flex items-center gap-4 w-[380px] p-4 hover:scale-[1.05] dark:bg-[#333333] rounded-3xl hover:cursor-pointer shadow-2xl">
                 <div className="w-[50px]">
-                  <IconComponent className="w-10 h-10" />
+                  <IconComponent className=" w-7 h-7 sm:w-10 sm:h-10" />
                 </div>
                 <div>
                   <h1 className="font-semibold pb-1 text-[18px]">{service.title}</h1>
