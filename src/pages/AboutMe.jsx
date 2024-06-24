@@ -41,7 +41,7 @@ export const AboutMe = () => {
           >
             <motion.img
               whileHover={{scale:0.96}} 
-              src="/personal/zaki.webp" 
+              src="https://res.cloudinary.com/dwou4xhhu/image/upload/v1719242135/raud0poo7vbmkpzspuog.webp" 
               className="border-white aspect-w-1 aspect-h-1  sm:w-[400px] sm:h-[400px] shadow-2xl dark:border-[#343a40] border-[16px] hover:cursor-pointer rounded-[50%]" 
               alt="personal image"
               loading="lazy"
