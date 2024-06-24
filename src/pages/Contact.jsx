@@ -47,27 +47,34 @@ export const Contact = () => {
     validationSchema: contactSchema,
     onSubmit: (values,{resetForm}) => {
 
-       // The number of times the email has sent
-       const num = localStorage.getItem('num')
-       if (!num || num == null || num == undefined ) {
-         localStorage.setItem('num',1)
-       }else if (parseInt(num) >= 3  ) {
-        toast.error('You have reached the maximum number of emails sent',{
+      // Retrieve the number of emails sent from local storage
+      const emailCount = parseInt(localStorage.getItem('emailCount') || '0', 10);
+
+      // Check if the user has reached the maximum number of emails allowed
+      if (emailCount >= 3) {
+        toast.error('You have reached the maximum number of emails allowed. Please contact us directly via your email.', {
           autoClose: 3000
-        }) ;
-        return
-       }else {
-        localStorage.setItem('num',parseInt(num) + 1)
-       }
-      sendEmail(values)
-      toast('Email was sent successfully',{
+        });
+        return;
+      }
+
+      // Increment the email count
+      localStorage.setItem('emailCount', emailCount + 1);
+
+      // Send the email
+      sendEmail(values);
+
+      // Display a success message
+      toast.success('Email was sent successfully', {
         closeOnClick: true,
         autoClose: 3000
       });
+
+
       resetForm();
       setTimeout(() => {
         navigate('/');
-      },3000);
+      },2000);
     },
   })
 
