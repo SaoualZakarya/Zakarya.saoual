@@ -8,6 +8,7 @@ import {RiCodeBoxLine} from 'react-icons/ri'
 import { services } from "../utils/localData"
 import { useEffect } from "react"
 import posthog from "posthog-js"
+import { Meta } from "../utils/meta"
 
 export const AboutMe = () => {
 
@@ -32,6 +33,7 @@ export const AboutMe = () => {
 
   return (
     <>
+    <Meta title={"about me"} />
     {/* Photo , CV and jobs */}
       <section className="container py-14 flex lg:flex-row flex-col items-center gap-7 lg:justify-between">
         <motion.div 

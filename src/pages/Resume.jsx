@@ -7,6 +7,7 @@ import {motion} from 'framer-motion'
 import { getEducation,getCertificate, getToolsAndLanguages } from "../utils/serverData";
 import { useEffect, useState } from "react";
 import { urlFor } from "../utils/sanity";
+import { Meta } from "../utils/meta";
 export const Resume = () => {
 
   const [languageAndTools,setLanguageAndTools] = useState([])
@@ -23,6 +24,7 @@ export const Resume = () => {
 
   return (
     <>
+      <Meta title={"Resume"} />
       <section >
         <PageTitlte title={'Resume'} desc={`${getCurrentYear - 2022} Years of Experience`} />
         <div className="container flex flex-wrap py-14 md:justify-between justify-center">

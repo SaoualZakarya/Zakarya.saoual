@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { PageTitlte } from "../component/PageTitlte"
 import { getProjects } from "../utils/serverData"
 import { urlFor } from "../utils/sanity"
+import { Meta } from "../utils/meta"
 
 export const Portfolio = () => {
 
@@ -13,6 +14,7 @@ export const Portfolio = () => {
 
   return (
     <>
+      <Meta title={"Portfolio"} />
       <PageTitlte desc={'My work'} title={'Portfolio'}  />
       <section>
         <div className="container flex justify-center py-14 flex-wrap gap-12">
