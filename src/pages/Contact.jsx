@@ -9,6 +9,8 @@ import * as Yup from 'yup';
 import {useFormik} from 'formik'
 import emailjs from '@emailjs/browser';
 import { useNavigate } from "react-router-dom"
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 let contactSchema = Yup.object({
   name: Yup.string().min(10,"Full name at least 10 char").required('Full name is required'),
@@ -44,11 +46,28 @@ export const Contact = () => {
     },
     validationSchema: contactSchema,
     onSubmit: (values,{resetForm}) => {
+
+       // The number of times the email has sent
+       const num = localStorage.getItem('num')
+       if (!num || num == null || num == undefined ) {
+         localStorage.setItem('num',1)
+       }else if (parseInt(num) >= 3  ) {
+        toast.error('You have reached the maximum number of emails sent',{
+          autoClose: 3000
+        }) ;
+        return
+       }else {
+        localStorage.setItem('num',parseInt(num) + 1)
+       }
       sendEmail(values)
+      toast('Email was sent successfully',{
+        closeOnClick: true,
+        autoClose: 3000
+      });
       resetForm();
       setTimeout(() => {
         navigate('/');
-      },2000);
+      },3000);
     },
   })
 

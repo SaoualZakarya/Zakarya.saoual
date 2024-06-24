@@ -6,12 +6,14 @@ import {Portfolio} from './pages/Portfolio'
 import {Blog} from './pages/Blog'
 import {Contact} from './pages/Contact'
 import {NotFound} from './pages/NotFound'
+
 function App() {
 
   return (
     <>
       <BrowserRouter>
         <Routes>
+          
           <Route path={'/'} element={<MainLayout/>} >
             <Route index element={<AboutMe/>} />
             <Route path='resume' element={<Resume/>}/>
