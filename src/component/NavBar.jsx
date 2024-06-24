@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState,useEffect, useRef } from "react"
 import {  NavLink,useLocation } from "react-router-dom"
 import {MdDarkMode} from 'react-icons/md'
 import {BsSun} from 'react-icons/bs'
@@ -35,6 +35,24 @@ export const NavBar = () => {
 
     // to manipilate navbar in the small size mode
     const [collapsed,setCollapsed] = useState(true)
+
+    // Reference for collapsed menu
+    const collapsedRef = useRef(null); 
+     // Click outside handler
+     const handleClickOutside = (event) => {
+        if (collapsedRef.current && !collapsedRef.current.contains(event.target)) {
+            setCollapsed(true); // Close the menu if clicked outside
+        }
+    };
+
+    useEffect(() => {
+        // Add event listener to handle clicks outside
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            // Cleanup event listener on component unmount
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
   return (
     <>
@@ -91,7 +109,7 @@ export const NavBar = () => {
         </header>
         {
             !collapsed && (
-                <div className="bg-white shadow-2xl dark:bg-[#222222ec] lg:hidden fixed font-bold z-30 right-0 transition duration-1000 top-[102px] w-[240px] rounded-l-3xl h-fit ">
+                <div ref={collapsedRef} className="bg-white shadow-2xl dark:bg-[#222222ec] lg:hidden fixed font-bold z-30 right-0 transition duration-1000 top-[102px] w-[240px] rounded-l-3xl h-fit ">
                     <div className="flex flex-col gap-10 items-center py-14">
                         <NavLink to="/" className={` ${isActive('/') ? 'text-[#333333] dark:text-white' : 'text-[#C5D6D0]'}`}>
                             About Me
