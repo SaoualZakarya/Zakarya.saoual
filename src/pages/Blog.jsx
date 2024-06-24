@@ -1,5 +1,5 @@
 import { PageTitlte } from "../component/PageTitlte"
-import { Meta } from "../utils/meta"
+import {Meta} from '../utils/Meta'
 
 export const Blog = () => {
   return (

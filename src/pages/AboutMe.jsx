@@ -8,7 +8,7 @@ import {RiCodeBoxLine} from 'react-icons/ri'
 import { services } from "../utils/localData"
 import { useEffect } from "react"
 import posthog from "posthog-js"
-import { Meta } from "../utils/meta"
+import {Meta} from '../utils/Meta'
 
 export const AboutMe = () => {
 

@@ -7,7 +7,7 @@ import {motion} from 'framer-motion'
 import { getEducation,getCertificate, getToolsAndLanguages } from "../utils/serverData";
 import { useEffect, useState } from "react";
 import { urlFor } from "../utils/sanity";
-import { Meta } from "../utils/meta";
+import {Meta} from '../utils/Meta'
 export const Resume = () => {
 
   const [languageAndTools,setLanguageAndTools] = useState([])

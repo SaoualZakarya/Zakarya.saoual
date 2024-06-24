@@ -11,7 +11,7 @@ import emailjs from '@emailjs/browser';
 import { useNavigate } from "react-router-dom"
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Meta } from "../utils/meta"
+import {Meta} from '../utils/Meta'
 
 let contactSchema = Yup.object({
   name: Yup.string().min(10,"Full name at least 10 char").required('Full name is required'),

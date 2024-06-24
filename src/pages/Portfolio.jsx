@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { PageTitlte } from "../component/PageTitlte"
 import { getProjects } from "../utils/serverData"
 import { urlFor } from "../utils/sanity"
-import { Meta } from "../utils/meta"
+import {Meta} from '../utils/Meta'
 
 export const Portfolio = () => {
 
