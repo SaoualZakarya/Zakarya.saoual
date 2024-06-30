@@ -75,7 +75,7 @@ export const AboutMe = () => {
           <div className="flex gap-10 font-semibold py-3">
           <a
             href="/CV.pdf"
-            // download="your-cv.pdf"
+            download="zakaryaSaoual-cv.pdf"
             className="px-6 py-3 rounded-[40px] border-solid border-2 transition duration-500 ease-in-out dark:text-white hover:bg-[#007bff] hover:text-white border-[#007bff]"
           >
             Download CV

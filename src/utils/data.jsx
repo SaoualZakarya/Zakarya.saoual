@@ -9,24 +9,6 @@ export const projects = [
         demoLink:'https://welcome-day-website.vercel.app'
     },
     {
-        title: 'Farmer Web Site',
-        img:'/project/agroland.PNG',
-        description: 'This is digital solution for the problem of the logisic in the agriculture field in Algeria country . Build durign Hackathon .I have work in the front-end side',
-        techUsedLogo: ['/tools/react.png','tools/motion.png','/tools/sanity.png'],
-        githubLinkFront: 'https://github.com/seffihfadi/webCraftersHack',
-        githubLinkBack: '' ,
-        demoLink:''
-    },
-    {
-        title: 'Key box Elearn',
-        img:'/project/keyBox.PNG',
-        description: 'This is digital solution to improve the educational system im Algeria . Build durign Hackathon .I work on the back-end side of this project and little bit of front.  ',
-        techUsedLogo: ['/tools/react.png','/tools/express.png','/tools/mongodb.png'],
-        githubLinkFront: 'https://github.com/YasseurBoutobba/KeyBox_Elearn',
-        githubLinkBack: 'https://github.com/zakaryaalgeria/junction-hackathon-backend' ,
-        demoLink:'https://junction-hackathon-backend.vercel.app'
-    },
-    {
         title: 'Ecommerce shop dashboard',
         img:'',
         description: 'This is full stack web project that allow to manage whole ecommerce shop .This is the admin Dashboard page',
